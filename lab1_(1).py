@@ -70,14 +70,16 @@ Convert to the Polish grading system.
 score = float(input("Enter your score: "))
 
 # Determine the grade
-if score == 5:
-    grade = "A"
-elif score == 4:
-    grade = "B"
-elif score == 3:
-    grade = "C"
-elif score == 2:
-    grade = "F"
+if score >= 90:
+    grade = "5"
+elif score >= 80:
+    grade = "4+"
+elif score >= 70:
+    grade = "4-"
+elif score >= 60:
+    grade = "3"
+else:
+    grade = "2"
 
 # Print the grade
 print("Your grade is:", grade)
@@ -144,7 +146,20 @@ print("The triangle is:", triangle_type)
 Add a check to see if a triangle can be drawn with the given sides.
 """
 
+# Define variables
+side1 = float(input("Enter the length of side 1: "))
+side2 = float(input("Enter the length of side 2: "))
+side3 = float(input("Enter the length of side 3: "))
 
+if side1 <= 0 or side2 <= 0 or side3 <= 0:
+    print("This triangle can't be drawn")
+elif (side1 + side2) <= side3 or (side1 + side3) <= side2 or (side2 + side3) <= side1:
+    print("This triangle can't be drawn")
+else:
+    print("This triangle can be drawn")
+
+# Print the type of triangle
+print("The triangle is:", triangle_type)
 
 """7. Write a Python program that performs arithmetic operations on two numbers."""
 
@@ -172,7 +187,27 @@ print("Result:", result)
 Add a check to see if someone is trying to divide by zero, if so, give an appropriate message
 """
 
+# Define variables
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operation = input("Enter the operation (+, -, *, /): ")
 
+# Perform the operation
+if operation == "+":
+    result = num1 + num2
+elif operation == "-":
+    result = num1 - num2
+elif operation == "*":
+    result = num1 * num2
+elif operation == "/" and num2 == 0:
+    result = "you can't divide a number by zero"
+elif operation == "/" and num2 != 0:
+    result = num1 / num20
+else:
+    result = "Invalid operation"
+
+# Print the result
+print("Result:", result)
 
 """Exercise 8. <br />
 Make a script out of all task and put it on GitHub
